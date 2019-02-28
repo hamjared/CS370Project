@@ -11,7 +11,7 @@
 
 ### Project Objective
 
-We will be developing a weather station which uses a Raspberry Pi as the main hub and a microcontroller to interface with the weather sensors which will talk wirelessly to the Pi over a network. The sensors that the weather station will include are: pressure, temperature, humidity, wind speed, and possibly a rain gauge. The station will provide near-real time environmental and climate data accessible remotely via a web server running on the Pi itself. The Raspberry Pi 3 was chosen because of its built-in WiFi capability. We will be installing Apache, mySql, and Wordpress on the Pi, and will likely be purchasing a cheap domain for remote access.
+We will be developing a weather station which uses a Raspberry Pi as the main hub and a microcontroller to interface with the weather sensors which will talk wirelessly to the Pi over a network. The sensors that the weather station will include are: pressure, temperature, humidity, wind speed, solar radiation and possibly a rain gauge. The station will provide near-real time environmental and climate data accessible remotely via a web server running on the Pi itself. The ESP8266 microcontroller was chosen due to its built in WiFi module and its ability to be programmed through the Arduino IDE. The Raspberry Pi 3 was chosen because of its built-in WiFi capability. We will be installing Apache, mySql, and Wordpress on the Pi, and will likely be purchasing a cheap domain for remote access.
 
 ---
 
