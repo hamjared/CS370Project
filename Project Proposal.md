@@ -5,7 +5,7 @@
 | Jared Ham      | jaredlham@gmail.com      |
 | *Stephen Sutherland | haka24@rams.colostate.edu |
 | Thomas              | email                     |
-| Hunter              | email                     |
+| Hunter Sullivan     | hs.sknow@gmail.com   |
 
 Project Objective
 
