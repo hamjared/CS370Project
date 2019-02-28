@@ -4,8 +4,10 @@
 | :------------- | :------------- |
 | Jared Ham      | jaredlham@gmail.com      |
 
+We will be developing a weather station which uses a Raspberry Pi as the main hub and a microcontroller to interface with the weather sensors which will talk wirelessly to the Pi over a network. The sensors that the weather station will include are: pressure, temperature, humidity, wind speed, and possibly a rain gauge. 
 
-Project Components
+
+Required Project Components
 
 | Component  |  Cost | Vendor  |  
 |---|---|---|
