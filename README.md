@@ -1,1 +1,1 @@
-# CS370Project
+# CS370Project - Pi Weather Station
