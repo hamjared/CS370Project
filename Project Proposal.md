@@ -4,7 +4,7 @@
 | :------------- | :------------- |
 | Jared Ham      | jaredlham@gmail.com      |
 | \*Stephen Sutherland | haka24@rams.colostate.edu |
-| Thomas              | email                     |
+| Thomas Vogenthaler | ThomasVogue7@gmail.com |
 | Hunter Sullivan     | hs.sknow@gmail.com   |
 
 ---
