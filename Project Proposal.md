@@ -1,4 +1,4 @@
-# Pi Weather Station - Project Proposal
+# Pi Weather Station - Development Project Proposal
 
 | Name | email     |
 | :------------- | :------------- |
