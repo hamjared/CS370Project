@@ -33,8 +33,8 @@
 * Sensor communicates with the ESP8266 using the I2C protocol
 * Resolution and Accuracy of the Sensor:
    * ± 1&deg;C = 1.8&deg;F
-       * More than adequate for a weather Station
+       * More than adequate for a weather station
    * ±3% Humidity
    * ±100 Pa
-       * Standard atmospheric pressure is 101325 Pa
+       * Standard atmospheric pressure is 101,325 Pa
        * This gives accuracies around ±0.1% at the values we expect to measure
