@@ -8,10 +8,18 @@
 | Hunter Sullivan     | hs.sknow@gmail.com   |
 
 ---
+# Status
+
+At this stage we have acquired our hardware and started planning the network structure of our weather station system and its final form as an end product. The stand alone sensor array will carry its own power source and communicate via wifi to the Raspberry Pi, which will act as a hub to recieve the data and project it to the web. Additionally the Pi will be located in a sheltered area with access to a wired power source. Since we realize that this requirement may cause the Pi to be considerable distance from the sensor array in some settings (or otherwise separated by walls, etc), we felt that a WiFi connection would provide the most stable connection. Our next step is to program the Pi and ESP8266 in a way that facilitates communication and data extraction. For this project we will be evaluating power consumption, resolution and accuracy, and cost and marketability.
 
 # Boards and Additional Hardware
 
-## Raspberry Pi Model 3
+## Raspberry Pi Model 3 B+
+
+<img src="pi.jpg" width="300">
+
+* Will act as access point for communication with ESP8266
+* 5V DC power consumption (from wall outlet or vehicle)
 
 ## ESP8266 - WiFi Development Board
 
