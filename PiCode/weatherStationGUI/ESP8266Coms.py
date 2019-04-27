@@ -14,6 +14,7 @@ def receiveData():
     data, addr = sock.recvfrom(1024)
     return data, addr
 
+
 def getTemp():
     sendData("Give me the weather")
     data, addr = receiveData()
@@ -25,6 +26,12 @@ def getHumidity():
     data, addr = receiveData()
     jsonData = json.loads(data)
     return jsonData["humidity"]
+
+def getPressure():
+    sendData("Give me the weather")
+    data, addr = receiveData()
+    jsonData = json.loads(data)
+    return jsonData["pressure"]
 
 
 

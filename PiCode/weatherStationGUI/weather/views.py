@@ -8,6 +8,7 @@ def index(request):
         'city': "Ft Collins",
         'temperature': ESP8266Coms.getTemp(),
         'humidity': ESP8266Coms.getHumidity(),
+        'pressure': ESP8266Coms.getPressure(),
         'description': "Sunny"
     }
     context = {'weather': weather}
