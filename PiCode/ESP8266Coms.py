@@ -1,10 +1,17 @@
 import socket
 import json
+from subprocess import Popen, PIPE
+import re
 
 WeatherStationIP = findStationIP()
 WeatherStationPort = 4210
 
 def findStationIP():
+    pid = Popen(["arp", "-n"], stdout=PIPE)
+    s = pid.communicate()[0]
+    t = s.decode("utf-8")
+    u = t.split('\n')
+    
     for i in range(1, len(u)-1):
      mac = re.search(r"(([a-f\d]{1,2}\:){5}[a-f\d]{1,2})", u[i]).groups()[0]
      if mac == 'bc:dd:c2:25:1b:24':
