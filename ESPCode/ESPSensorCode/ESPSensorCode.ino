@@ -62,7 +62,7 @@ void setup()
 void loop()
 {
     char replyPacket[256] = "";
-    sensorData["temperature"] = bme.readTemperature();
+    sensorData["temperature"] = bme.readTemperature()*1.8 + 32;
     sensorData["humidity"] = bme.readHumidity();
     sensorData["pressure"] = bme.readPressure();
 
