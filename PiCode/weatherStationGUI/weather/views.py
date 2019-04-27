@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
-from PiCode import ESP8266Coms
+import ESP8266Coms
+
 
 def index(request):
     weather = {
