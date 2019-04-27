@@ -1,9 +1,10 @@
+
 import socket
 import json
 from subprocess import Popen, PIPE
 import re
 
-WeatherStationIP = findStationIP()
+
 WeatherStationPort = 4210
 
 def findStationIP():
@@ -17,6 +18,7 @@ def findStationIP():
      if mac == 'bc:dd:c2:25:1b:24':
              return(u[i].split(' ')[0])
 
+WeatherStationIP = findStationIP()
 
 def sendData(message):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -32,9 +34,11 @@ def receiveData():
 def main():
     sendData("Hello from Pi")
     data, addr = receiveData()
-    print(data)
-    jsonData = json.loads(data)
+    #print(data)
+    jsonData = json.loads(data.decode("utf-8"))
     print(jsonData["temperature"])
+    print(jsonData["humidity"])
+    print(jsonData["pressure"])
 
 
 if __name__ == "__main__":
