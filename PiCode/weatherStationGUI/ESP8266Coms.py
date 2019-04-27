@@ -32,7 +32,7 @@ def receiveData():
 
 
 def getTemp():
-    return 900
+    #return 900
 
     sendData("Give me the weather")
     data, addr = receiveData()
@@ -40,14 +40,14 @@ def getTemp():
     return jsonData["temperature"]
 
 def getHumidity():
-    return 800
+    #return 800
     sendData("Give me the weather")
     data, addr = receiveData()
     jsonData = json.loads(data.decode("utf-8"))
     return jsonData["humidity"]
 
 def getPressure():
-    return 700
+    #return 700
     sendData("Give me the weather")
     data, addr = receiveData()
     jsonData = json.loads(data.decode("utf-8"))
