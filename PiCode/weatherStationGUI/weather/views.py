@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
+from PiCode import ESP8266Coms
 
 def index(request):
-    return render(request, 'weather/index.html') #returns the index.html template
+    weather = {
+        'city': "Ft Collins",
+        'temperature': ESP8266Coms.getTemp(),
+        'description': "Sunny"
+    }
+    context = {'weather': weather}
+    return render(request, 'weather/index.html', context) #returns the index.html template
+
