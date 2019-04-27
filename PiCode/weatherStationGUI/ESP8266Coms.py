@@ -20,6 +20,12 @@ def getTemp():
     jsonData = json.loads(data)
     return jsonData["temperature"]
 
+def getHumidity():
+    sendData("Give me the weather")
+    data, addr = receiveData()
+    jsonData = json.loads(data)
+    return jsonData["humidity"]
+
 
 
 def main():
