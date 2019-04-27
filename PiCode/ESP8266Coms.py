@@ -1,8 +1,15 @@
 import socket
 import json
 
-WeatherStationIP = "192.168.1.149"
+WeatherStationIP = findStationIP()
 WeatherStationPort = 4210
+
+def findStationIP():
+    for i in range(1, len(u)-1):
+     mac = re.search(r"(([a-f\d]{1,2}\:){5}[a-f\d]{1,2})", u[i]).groups()[0]
+     if mac == 'bc:dd:c2:25:1b:24':
+             return(u[i].split(' ')[0])
+
 
 def sendData(message):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
