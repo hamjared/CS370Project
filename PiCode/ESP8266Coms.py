@@ -1,4 +1,5 @@
 import socket
+import json
 
 WeatherStationIP = "192.168.1.149"
 WeatherStationPort = 4210
@@ -16,7 +17,10 @@ def receiveData():
 
 def main():
     sendData("Hello from Pi")
-    print(receiveData())
+    data, addr = receiveData()
+    print(data)
+    jsonData = json.loads(data)
+    print(jsonData["temperature"])
 
 
 if __name__ == "__main__":
