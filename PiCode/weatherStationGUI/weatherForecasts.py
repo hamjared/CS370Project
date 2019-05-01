@@ -1,11 +1,9 @@
 import pyowm
-import googlemaps
+import .location
 
 def getForecastatCurrentLocation():
 
-
-    google = googlemaps.Client('AIzaSyATmEjqfO2zGH8ou2bSuzY-qOwDW6NhIJ8')
-    coords = google.geolocate()
+    coords = location.getCoords()
 
     owm = pyowm.OWM('1ee670f6f625062851ef5a24383c88c8')
     forecast = owm.three_hours_forecast_at_coords(coords['location']['lat'], coords['location']['lng']).get_forecast().get_weathers()

@@ -8,7 +8,7 @@ def findStationIP():
     s = pid.communicate()[0]
     t = s.decode("utf-8")
     u = t.split('\n')
-    
+
     for i in range(1, len(u)-1):
         try:
             mac = re.search(r"(([a-f\d]{1,2}\:){5}[a-f\d]{1,2})", u[i]).groups()[0]
@@ -32,18 +32,22 @@ def receiveData():
 
 
 def getTemp():
+    return 900
+
     sendData("Give me the weather")
     data, addr = receiveData()
     jsonData = json.loads(data.decode("utf-8"))
     return jsonData["temperature"]
 
 def getHumidity():
+    return 800
     sendData("Give me the weather")
     data, addr = receiveData()
     jsonData = json.loads(data.decode("utf-8"))
     return jsonData["humidity"]
 
 def getPressure():
+    return 700
     sendData("Give me the weather")
     data, addr = receiveData()
     jsonData = json.loads(data.decode("utf-8"))
