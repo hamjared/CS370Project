@@ -1,9 +1,11 @@
 import pyowm
-import .location
+import location
 
 def getForecastatCurrentLocation():
 
     coords = location.getCoords()
+    print("lat: {}, long: {}, accuracy: {} meters".format(coords['location']['lat'], coords['location']['lng'], coords['accuracy']))
+    print(location.getCity(coords))
 
     owm = pyowm.OWM('1ee670f6f625062851ef5a24383c88c8')
     forecast = owm.three_hours_forecast_at_coords(coords['location']['lat'], coords['location']['lng']).get_forecast().get_weathers()
