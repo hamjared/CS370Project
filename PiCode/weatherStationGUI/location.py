@@ -11,7 +11,19 @@ def getCoords():
 def getCity(coords):
 	try:
 		g = google.reverse_geocode((coords['location']['lat'], coords['location']['lng']))
-		return "{}, {}".format(g[0]['address_components'][2]['long_name'], g[0]['address_components'][4]['long_name'])
+		city = ''
+		state = ''
+		for i in (g[0]['address_components']):
+			if i['types'] == ['locality', 'political']:
+				city = i['long_name']
+			elif i['types'] == ['administrative_area_level_1', 'political']:
+				state = i['short_name']
+		if not state:
+			state = 'unknown state'
+		if not city:
+			city = 'unknown city'
+
+		return "{}, {}".format(city, state)
 	except:
 		return 'unknown city'
 	
