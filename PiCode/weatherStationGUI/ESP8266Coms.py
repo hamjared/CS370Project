@@ -53,6 +53,12 @@ def getPressure():
     jsonData = json.loads(data.decode("utf-8"))
     return jsonData["pressure"]
 
+def getSolar():
+    sendData("Give me the weather")
+    data, addr = receiveData()
+    jsonData = json.loads(data.decode("utf-8"))
+    return jsonData["Sunlight"]
+
 
 
 def main():
