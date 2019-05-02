@@ -15,7 +15,7 @@
 
 #ifndef STASSID
 #define STASSID "ssid"
-#define STAPSK  "passwd"
+#define STAPSK  "password"
 #endif
 
 const char* ssid = STASSID;
@@ -30,7 +30,7 @@ Adafruit_BME280 bme(BME_CS); //hardware spi for the pressure, humidty, temperatu
 bool status; //boolean to hold status of successfull connection to temp sensor
 
 //Arduino JSON data structure
-StaticJsonDocument<150> sensorData;
+StaticJsonDocument<250> sensorData;
 
 
 void setup()
@@ -61,15 +61,30 @@ void setup()
 
 void loop()
 {
-    char replyPacket[256] = "";
-    sensorData["temperature"] = bme.readTemperature()*1.8 + 32;
-    sensorData["humidity"] = bme.readHumidity();
-    sensorData["pressure"] = bme.readPressure();
 
-    serializeJson(sensorData, replyPacket, 256);
+
+
+
     int packetSize = Udp.parsePacket();
     if (packetSize)
     {
+        char replyPacket[256] = "";
+        sensorData["temperature"] = bme.readTemperature()*1.8 + 32;
+        sensorData["humidity"] = bme.readHumidity();
+        sensorData["pressure"] = bme.readPressure();
+        int sunlight = analogRead(A0);
+        char sun [32] = "";
+        if (sunlight >= 0 && sunlight <=5){
+          strcat(sun, "No sun");
+        }
+        else if (sunlight >=6 && sunlight <= 100){
+          strcat(sun, "Cloudy");
+        }
+        else{
+          strcat(sun, "Sunny");
+        }
+        sensorData["Sunlight"] = sun;
+        serializeJson(sensorData, replyPacket, 256);
         // receive incoming UDP packets
         Serial.printf("Received %d bytes from %s, port %d\n", packetSize, Udp.remoteIP().toString().c_str(), Udp.remotePort());
         int len = Udp.read(incomingPacket, 255);
