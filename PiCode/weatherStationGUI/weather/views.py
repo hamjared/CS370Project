@@ -11,6 +11,7 @@ def index(request):
     temp = ESP8266Coms.getTemp()
     humidity = ESP8266Coms.getHumidity()
     pressure = ESP8266Coms.getPressure()
+    sunlight = ESP8266Coms.getSolar()
 
     if temp < 40:
         description = "Cold"
@@ -28,7 +29,8 @@ def index(request):
         'humidity': humidity,
         'pressure': pressure,
         'description': description,
-        'coords': formattedCoords
+        'coords': formattedCoords,
+        'Sunlight': sunlight
     }
     context = {'weather': weather}
     return render(request, 'weather/index.html', context) #returns the index.html template
